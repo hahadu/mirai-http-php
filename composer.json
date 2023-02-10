@@ -5,11 +5,7 @@
     "type": "library",
     "require": {
         "php": ">=7.4",
-        "../../../vendor/guzzlehttp/guzzle": ">6.1"
-    },
-    "require-dev": {
-        "php": ">=7.4"
-
+        "guzzlehttp/guzzle": ">6.1"
     },
     "license": "Apache-2.0",
     "authors": [
