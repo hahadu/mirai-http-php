@@ -1,0 +1,26 @@
+{
+    "name": "hahadu/mirai-http-php",
+    "description": "mirai php http class",
+    "minimum-stability": "stable",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "../../../vendor/guzzlehttp/guzzle": ">6.1"
+    },
+    "require-dev": {
+        "php": ">=7.4"
+
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "hahadu",
+            "email": "582167246@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hahadu\\MiraiHttp\\": "src/"
+        }
+    }
+}
