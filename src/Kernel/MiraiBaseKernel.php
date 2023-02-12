@@ -1,13 +1,13 @@
 <?php
 
-namespace MiraiHttp\Base;
+namespace MiraiHttp\Kernel;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as guzzleRequest;
 
 /**
  * base request class
  */
-class Request
+class MiraiBaseKernel
 {
 
     protected const MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY = 'mirai_q_bot_session_';
@@ -24,7 +24,7 @@ class Request
 
     }
 
-    public function getBot(string $uri,array $body):mixed
+    public function getMethodBot(string $uri, array $body):mixed
     {
         $client = new Client();
         $headers = [
@@ -48,14 +48,14 @@ class Request
         return $body;
     }
 
-    public function postBot(string $uri,array $body):mixed
+    public function postMethodBot(string $uri, array $body):mixed
     {
         $client = new Client();
         $headers = [
             'Content-Type' => 'text/plain'
         ];
 
-        $request = new guzzleRequest('POST', $this->getHost() . $uri,$headers,json_encode($body,JSON_UNESCAPED_UNICODE));
+        $request = new guzzleRequest('POST', $this->getHost() .$uri,$headers,json_encode($body,JSON_UNESCAPED_UNICODE));
         $res = $client->sendAsync($request)->wait();
         $body = json_decode($res->getBody(),true);
         if(in_array($body['code'],[3,4])){

@@ -1,8 +1,13 @@
 <?php
 
-namespace MiraiHttp\Base;
+namespace MiraiHttp\HttpAdapter\Proprietary;
+use MiraiHttp\Kernel\MiraiBaseKernel;
+use Psr\SimpleCache\InvalidArgumentException;
 
-class Proprietary extends Request
+/**
+ * 验证与会话
+ */
+class VerifySession extends MiraiBaseKernel
 {
 
     public function __construct($qq = null, $verifyKey = null)
@@ -19,7 +24,7 @@ class Proprietary extends Request
      */
     public function verify(): array
     {
-        return $this->postBot('verify',['verifyKey'=>$this->verifyKey]);
+        return $this->postMethodBot('verify',['verifyKey'=>$this->verifyKey]);
     }
 
     /**
@@ -35,7 +40,7 @@ class Proprietary extends Request
             'qq'=>$this->qq
         ];
 
-        $bind = $this->postBot('bind',$body);
+        $bind = $this->postMethodBot('bind',$body);
         throw_unless(0===$bind['code'],\Exception::class,$bind['msg'],$bind['code']);
         cache()->set(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq,$sessionKey['session'],1800);
         $body['status'] = $bind['msg'];
@@ -56,23 +61,30 @@ class Proprietary extends Request
         if(is_null($sessionKey)){
             $this->bind();
         }
-        $info = $this->getBot('sessionInfo',['sessionKey'=>$sessionKey]);
+        throw_if(is_null($sessionKey),\Exception::class,'');
+        $info = $this->getMethodBot('sessionInfo',['sessionKey'=>$sessionKey]);
         if(in_array($info['code'],[3,4])){
                 $this->bind();
                 return $this->sessionInfo();
         }
-        throw_unless(0===$info['code'],\Exception::class,$info['msg'],$info['code']);
+        throw_if(0!==$info['code'],\Exception::class,$info['msg'],$info['code']);
         return $info['data'];
     }
 
 
-    public function release(){
-        $sessionKey = $this->verify();
+    /**
+     * 释放
+     * @return array
+     * @throws InvalidArgumentException
+     */
+    public function release():array
+    {
+        $sessionKey = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            'sessionKey'=>$sessionKey['session'],
+            'sessionKey'=>$sessionKey,
             'qq'=>$this->qq
         ];
         cache()->delete(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
-        return $this->postBot('release',$body);
+        return $this->postMethodBot('release',$body);
     }
 }
