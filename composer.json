@@ -5,7 +5,8 @@
     "type": "library",
     "require": {
         "php": ">=7.4",
-        "guzzlehttp/guzzle": ">6.1"
+        "guzzlehttp/guzzle": ">6.1",
+        "hahadu/reflector" : "^1.0"
     },
     "license": "Apache-2.0",
     "authors": [

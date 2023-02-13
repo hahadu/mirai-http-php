@@ -2,7 +2,10 @@
 
 namespace MiraiHttp\Contracts;
 
-class MiraiHttpApiContract
+/**
+ * api接口返码说明
+ */
+class MiraiHttpApiStatusContract
 {
     /** @var int 正常 */
     const SUCCESS = 0;
