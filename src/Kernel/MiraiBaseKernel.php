@@ -14,7 +14,7 @@ class MiraiBaseKernel
     protected const MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY = 'mirai_q_bot_session_';
     protected string $qq;
     protected string $verifyKey;
-    protected array $heads = ['application/json'];
+    protected array $heads = ['content-type'=>'application/json'];
     public function __construct($qq=null,$verifyKey=null)
     {
         if(is_null($qq)){

@@ -95,8 +95,8 @@ class BotMessageOperate extends MiraiBaseKernel
 
     /**
      * 撤回消息
-     * @param int $message_id
-     * @param int $target
+     * @param int $message_id 需要撤回的消息的messageId
+     * @param int $target 好友id或群id
      * @return array
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
@@ -113,9 +113,9 @@ class BotMessageOperate extends MiraiBaseKernel
 
     /**
      * 获取漫游消息
-     * @param string $timeStart
-     * @param string $timeEnd
-     * @param string $target
+     * @param string $timeStart 起始时间, UTC+8 时间戳, 单位为秒. 可以为 0, 即表示从可以获取的最早的消息起. 负数将会被看是 0.
+     * @param string $timeEnd 结束时间, UTC+8 时间戳, 单位为秒. 可以为 Long.MAX_VALUE, 即表示到可以获取的最晚的消息为止. 低于 timeStart 的值将会被看作是 timeStart 的值.
+     * @param string $target 漫游消息对象，好友id，目前仅支持好友漫游消息
      * @return array
      */
     public function roamingMessages(string $timeStart,string $timeEnd,string $target):array
@@ -127,5 +127,7 @@ class BotMessageOperate extends MiraiBaseKernel
         ];
         return $this->postMethodBot('roamingMessages',$body);
     }
+
+
 
 }
