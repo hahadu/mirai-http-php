@@ -6,6 +6,9 @@ use MiraiHttp\Kernel\MiraiBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
+/**
+ * 群管理
+ */
 class GroupManager extends MiraiBaseKernel
 {
     /**
