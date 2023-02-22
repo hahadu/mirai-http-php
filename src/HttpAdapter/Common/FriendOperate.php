@@ -16,7 +16,7 @@ class FriendOperate extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
         ];
         return $this->postMethodBot('deleteFriend',$body);

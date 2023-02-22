@@ -20,7 +20,7 @@ class UploadFile extends MiraiBaseKernel
         throw_unless(in_array($type,["friend" , "group" , "temp"]),\Exception::class,'上传类型不支持："friend" , "group" , "temp"');
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "type"=> $type,
             "img"=> $img,
         ];
@@ -38,7 +38,7 @@ class UploadFile extends MiraiBaseKernel
         throw_unless($type=='group',\Exception::class,'type仅支持group');
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "type"=> $type,
             "voice"=> $voice,
         ];
@@ -57,7 +57,7 @@ class UploadFile extends MiraiBaseKernel
         throw_unless($type=='group',\Exception::class,'type仅支持group');
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "type"=> $type,
             "target"=> $target,
             "path"=> $path,

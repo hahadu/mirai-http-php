@@ -46,14 +46,14 @@ class GroupAnnouncement extends MiraiBaseKernel
             "sessionKey" => $session_key,
             "target"=> $target,
             "content"=> $content,
-            "send_to_new_member"=> $send_to_new_member,
+            "sendToNewMember"=> $send_to_new_member,
             "pinned"=> $pinned,
-            "show_edit_card"=> $show_edit_card,
-            "show_popup"=> $show_popup,
-            "require_confirmation"=> $require_confirmation,
-            "image_url"=> $image_url,
-            "image_path"=> $image_path,
-            "image_base64"=> $image_base64,
+            "showEditCard"=> $show_edit_card,
+            "showPopup"=> $show_popup,
+            "requireConfirmation"=> $require_confirmation,
+            "imageUrl"=> $image_url,
+            "imagePath"=> $image_path,
+            "imageBase64"=> $image_base64,
         ];
         return $this->postMethodBot('anno/publish',$body);
     }
@@ -74,5 +74,6 @@ class GroupAnnouncement extends MiraiBaseKernel
         ];
         return $this->postMethodBot('anno/delete',$body);
     }
+
 
 }

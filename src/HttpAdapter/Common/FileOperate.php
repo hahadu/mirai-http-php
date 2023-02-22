@@ -84,7 +84,7 @@ class FileOperate extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "id"=> $id,
             "path"=> $path,
             "target"=> $target,
@@ -108,7 +108,7 @@ class FileOperate extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "id"=> $id,
             "path"=> $path,
             "target"=> $target,
@@ -132,14 +132,14 @@ class FileOperate extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "id"=> $id,
             "path"=> $path,
             "target"=> $target,
             "group"=> $group,
             "qq"=> $qq,
-            "move_to"=> $move_to,
-            "move_to_path"=> $move_to_path,
+            "moveTo"=> $move_to,
+            "moveToPath"=> $move_to_path,
         ];
         return $this->postMethodBot('file/move',$body);
     }
@@ -157,13 +157,13 @@ class FileOperate extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "id"=> $id,
             "path"=> $path,
             "target"=> $target,
             "group"=> $group,
             "qq"=> $qq,
-            "rename_to"=> $rename_to,
+            "renameTo"=> $rename_to,
         ];
         return $this->postMethodBot('file/rename',$body);
     }

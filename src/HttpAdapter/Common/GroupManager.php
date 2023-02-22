@@ -24,9 +24,9 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
-            "member_id"=> $member_id,
+            "memberId"=> $member_id,
             "time"=> $time,
         ];
         return $this->postMethodBot('mute',$body);
@@ -46,9 +46,9 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY . $this->qq);
         $body = [
-            "session_key" => $session_key,
+            "sessionKey" => $session_key,
             "target" => $target,
-            "member_id" => $member_id,
+            "memberId" => $member_id,
             "block" => $block,
             "msg" => $msg,
         ];
@@ -64,7 +64,7 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
         ];
         return $this->postMethodBot('quit',$body);
@@ -78,7 +78,7 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
         ];
         return $this->postMethodBot('muteAll',$body);
@@ -92,7 +92,7 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
         ];
         return $this->postMethodBot('unmuteAll',$body);
@@ -107,8 +107,8 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
-            "message_id"=> $message_id,
+            "sessionKey"=> $session_key,
+            "messageId"=> $message_id,
             "target"=> $target,
         ];
         return $this->postMethodBot('setEssence',$body);
@@ -122,7 +122,7 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
         ];
         return $this->getMethodBot('groupConfig',$body);
@@ -144,15 +144,15 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
             "config"=> $config,
-            "name"=> $name,
+            "name" => $name,
             "announcement"=> $announcement,
-            "confess_talk"=> $confess_talk,
-            "allow_member_invite"=> $allow_member_invite,
-            "auto_approve"=> $auto_approve,
-            "anonymous_chat"=> $anonymous_chat,
+            "confessTalk"=> $confess_talk,
+            "allowMemberInvite"=> $allow_member_invite,
+            "autoApprove"=> $auto_approve,
+            "anonymousChat"=> $anonymous_chat,
         ];
         return $this->postMethodBot('groupConfig',$body);
     }
@@ -167,9 +167,9 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
-            "member_id"=> $member_id,
+            "memberId"=> $member_id,
         ];
         return $this->getMethodBot('memberInfo',$body);
     }
@@ -186,12 +186,12 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
-            "member_id"=> $member_id,
+            "memberId"=> $member_id,
             "info"=> $info,
             "name"=> $name,
-            "special_title"=> $special_title,
+            "specialTitle"=> $special_title,
         ];
         return $this->postMethodBot('memberInfo',$body);
     }
@@ -206,9 +206,9 @@ class GroupManager extends MiraiBaseKernel
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [
-            "session_key"=> $session_key,
+            "sessionKey"=> $session_key,
             "target"=> $target,
-            "member_id"=> $member_id,
+            "memberId"=> $member_id,
             "assign"=> $assign,
         ];
         return $this->postMethodBot('memberAdmin',$body);
