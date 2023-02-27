@@ -2,12 +2,12 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 缓存操作
  */
-class CacheOperate extends MiraiBaseKernel
+class CacheOperate extends MiraiHttpBaseKernel
 {
     /**
      * 通过messageId获取消息

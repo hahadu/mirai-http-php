@@ -2,9 +2,9 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
-class FriendOperate extends MiraiBaseKernel
+class FriendOperate extends MiraiHttpBaseKernel
 {
 
     /**

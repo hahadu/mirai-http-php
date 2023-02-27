@@ -2,14 +2,14 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * 获取账号信息
  */
-class BotAccount extends MiraiBaseKernel
+class BotAccount extends MiraiHttpBaseKernel
 {
 
     /**

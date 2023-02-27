@@ -2,12 +2,12 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 获取插件信息
  */
-class HttpApiBotPlug extends MiraiBaseKernel
+class HttpApiBotPlug extends MiraiHttpBaseKernel
 {
 
     /**

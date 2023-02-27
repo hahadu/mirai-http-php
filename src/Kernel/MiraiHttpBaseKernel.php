@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Request as guzzleRequest;
 /**
  * base request class
  */
-class MiraiBaseKernel
+class MiraiHttpBaseKernel
 {
 
 

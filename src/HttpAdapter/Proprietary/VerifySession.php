@@ -1,13 +1,13 @@
 <?php
 
 namespace MiraiHttp\HttpAdapter\Proprietary;
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 use Psr\SimpleCache\InvalidArgumentException;
 
 /**
  * 验证与会话
  */
-class VerifySession extends MiraiBaseKernel
+class VerifySession extends MiraiHttpBaseKernel
 {
 
     public function __construct($qq = null, $verifyKey = null)

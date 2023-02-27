@@ -2,12 +2,12 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 事件处理
  */
-class HttpRespEventOperate extends MiraiBaseKernel
+class HttpRespEventOperate extends MiraiHttpBaseKernel
 {
     /**
      * 添加好友申请

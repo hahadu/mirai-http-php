@@ -2,14 +2,14 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * 文件管理
  */
-class FileOperate extends MiraiBaseKernel
+class FileOperate extends MiraiHttpBaseKernel
 {
 
     /**

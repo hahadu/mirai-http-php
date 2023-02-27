@@ -2,12 +2,12 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 消息发送与撤回
  */
-class BotMessageOperate extends MiraiBaseKernel
+class BotMessageOperate extends MiraiHttpBaseKernel
 {
     const MIRAI_BOT_NUDGE_FRIEND = 'Friend';
     const MIRAI_BOT_NUDGE_GROUP = 'Group';

@@ -2,9 +2,9 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
-class GroupAnnouncement extends MiraiBaseKernel
+class GroupAnnouncement extends MiraiHttpBaseKernel
 {
     /**
      * 获取群公告

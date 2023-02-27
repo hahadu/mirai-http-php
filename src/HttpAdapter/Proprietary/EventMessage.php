@@ -1,12 +1,12 @@
 <?php
 
 namespace MiraiHttp\HttpAdapter\Proprietary;
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
 
-class EventMessage extends MiraiBaseKernel
+class EventMessage extends MiraiHttpBaseKernel
 {
 
     /**

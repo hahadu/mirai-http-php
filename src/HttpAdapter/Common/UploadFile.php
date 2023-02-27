@@ -2,12 +2,12 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 多媒体文件上传
  */
-class UploadFile extends MiraiBaseKernel
+class UploadFile extends MiraiHttpBaseKernel
 {
     /**
      * 图片文件上传

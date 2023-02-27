@@ -2,14 +2,14 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiBaseKernel;
+use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * 群管理
  */
-class GroupManager extends MiraiBaseKernel
+class GroupManager extends MiraiHttpBaseKernel
 {
     /**
      * 禁言群成员
