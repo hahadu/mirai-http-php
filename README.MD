@@ -1,5 +1,5 @@
 #mirai http PHP
-# 支持laravel thinkphp
+# 支持laravel
 
 ##### 功能努力手打中，欢迎体验
 

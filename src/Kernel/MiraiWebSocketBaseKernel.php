@@ -2,7 +2,8 @@
 
 namespace MiraiHttp\Kernel;
 use Laravel\Octane\Swoole\SwooleClient;
-use Swoole;
+use Swoole\WebSocket\Server;
+use Swoole\WebSocket\Frame;
 
 class MiraiWebSocketBaseKernel
 {
@@ -12,7 +13,7 @@ class MiraiWebSocketBaseKernel
     const WEB_SOCKET_CHANNEL_MESSAGE = 'message';
     const WEB_SOCKET_CHANNEL_EVENT = 'event';
     const WEB_SOCKET_CHANNEL_ALL = 'all';
-    public function __construct($qq=null,$verifyKey=null)
+    public function __construct(Server $server,Frame $frame,string $qq=null,string $verifyKey=null)
     {
         if(is_null($qq)){
             $qq = config('miraibot.default_member');

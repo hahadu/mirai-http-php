@@ -4,6 +4,7 @@ namespace MiraiHttp\WSAdapter;
 
 use Illuminate\Console\Command;
 use Swoole;
+use Swoole\Constant;
 
 class BotWebsocketServer extends Command
 {
@@ -30,20 +31,23 @@ class BotWebsocketServer extends Command
     {
         $server = new Swoole\Websocket\Server(config('miraibot.websocket_server.host'), config('miraibot.websocket_server.port'));
 
-        $server->on('start', function ($server) {
-            echo "Bot Websocket Server is started at ws://".config('miraibot.websocket.host').':'.config('miraibot.websocket.port');
+        $server->on(Constant::EVENT_START, function (Swoole\Websocket\Server $server) {
+            echo "Bot Websocket Server is started at ws://".config('miraibot.websocket_server.host').':'.config('miraibot.websocket_server.port');
         });
 
-        $server->on('open', function($server, $req) {
+        $server->on(Constant::EVENT_OPEN, function($server, $req) {
             echo "connection open: {$req->fd}\n";
         });
 
-        $server->on('message', function($server, $frame) {
+        $server->on(Constant::EVENT_MESSAGE, function($server,Swoole\WebSocket\Frame $frame) {
             echo "received message: {$frame->data}\n";
-            $server->push($frame->fd, json_encode(['hello', 'world']));
+            new WSBotAccount($server,$frame);
+            new WSApiBotPlug($server,$frame);
+            dump($frame);
+            //$server->push($frame->fd, json_encode(['hello', 'world']));//測試websocket鏈接
         });
 
-        $server->on('close', function($server, $fd) {
+        $server->on(Constant::EVENT_CLOSE, function($server, $fd) {
             echo "connection close: {$fd}\n";
         });
 

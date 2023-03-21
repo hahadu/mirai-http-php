@@ -28,4 +28,5 @@ class HttpApiBotPlug extends MiraiHttpBaseKernel
         return $this->getMethodBot('botList');
     }
 
+
 }
