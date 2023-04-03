@@ -14,7 +14,7 @@ interface BotAccountInterface
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */
-    public function friendList():array;
+    public function friendList();
 
     /**
      * 获取群列表
@@ -22,7 +22,7 @@ interface BotAccountInterface
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */
-    public function groupList():array;
+    public function groupList();
 
 
     /**
@@ -32,7 +32,7 @@ interface BotAccountInterface
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function groupMemberList(string $target):array;
+    public function groupMemberList(string $target);
 
     /**
      * 获取最新群成员列表
@@ -42,7 +42,7 @@ interface BotAccountInterface
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function groupLatestMemberList(string $target,array $member_ids=null):array;
+    public function groupLatestMemberList(string $target,array $member_ids=null);
 
     /**
      * 获取bot资料
@@ -50,7 +50,7 @@ interface BotAccountInterface
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function botProfile():array;
+    public function botProfile();
 
     /**
      * 获取好友资料
@@ -59,7 +59,7 @@ interface BotAccountInterface
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function friendProfile(int $target):array;
+    public function friendProfile(int $target);
 
     /**
      * 获取群成员资料
@@ -69,7 +69,7 @@ interface BotAccountInterface
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function memberProfile(int $target,int $member_id):array;
+    public function memberProfile(int $target,int $member_id);
 
     /**
      * 获取QQ用户资料
@@ -78,7 +78,7 @@ interface BotAccountInterface
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function userProfile(int $target):array;
+    public function userProfile(int $target);
 
 
 }

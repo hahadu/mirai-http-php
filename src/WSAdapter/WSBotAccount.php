@@ -19,8 +19,7 @@ class WSBotAccount extends MiraiWebSocketBaseKernel
      */
     public function friendList():void
     {
-        $list = [];
-        $this->server->push($this->frame->fd,$this->sendCommand('friendList',$list,$this->frame->fd));
+        $this->server->push($this->frame->fd,$this->sendCommand('friendList',[],$this->frame->fd));
     }
 
     /**
@@ -31,8 +30,7 @@ class WSBotAccount extends MiraiWebSocketBaseKernel
      */
     public function groupList():void
     {
-        $list = [];
-        $this->server->push($this->frame->fd,$this->sendCommand('groupList',$list,$this->frame->fd));
+        $this->server->push($this->frame->fd,$this->sendCommand('groupList',[],$this->frame->fd));
     }
 
     /**
@@ -44,8 +42,7 @@ class WSBotAccount extends MiraiWebSocketBaseKernel
      */
     public function groupMemberList(string $target):void
     {
-        $list = [];
-        $this->server->push($this->frame->fd,$this->sendCommand('memberList',$list,$this->frame->fd));
+        $this->server->push($this->frame->fd,$this->sendCommand('memberList',[],$this->frame->fd));
     }
 
     /**

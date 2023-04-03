@@ -25,7 +25,6 @@ class MiraiWebSocketBaseKernel
 
         $this->qq = $qq;
         $this->verifyKey = $verifyKey??config('miraibot.verify_key');
-
     }
 
     /**
@@ -38,9 +37,9 @@ class MiraiWebSocketBaseKernel
     protected function sendCommand(string $command,array $content,$syncId,$subCommand=null):string
     {
         return json_encode([
-            'syncId'=>$syncId,
-            'command' =>$command,
-            'subCommand'=>$subCommand,
+            'syncId'  => $syncId,
+            'command' => $command,
+            'subCommand' => $subCommand,
             'content' => $content
         ],JSON_UNESCAPED_UNICODE);
     }

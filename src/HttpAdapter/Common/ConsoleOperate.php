@@ -29,7 +29,7 @@ class ConsoleOperate extends MiraiHttpBaseKernel
      * @param string $description 命令描述
      * @return array
      */
-    public function cmdRegister(string $name,array $alias=[],string $usage,string $description):array
+    public function cmdRegister(string $name,array $alias,string $usage,string $description):array
     {
         $session_key = cache()->get(self::MIRAI_BOT_Q_MEMBER_BIND_CACHE_SESSION_KEY.$this->qq);
         $body = [

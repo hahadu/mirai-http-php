@@ -2,12 +2,13 @@
 
 namespace MiraiHttp\HttpAdapter\Common;
 
+use MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
 use MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 缓存操作
  */
-class CacheOperate extends MiraiHttpBaseKernel
+class CacheOperate extends MiraiHttpBaseKernel implements BotMessageCacheInterface
 {
     /**
      * 通过messageId获取消息
