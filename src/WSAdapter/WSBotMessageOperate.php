@@ -19,7 +19,12 @@ class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessage
      */
     public function sendFriendMessage(?int $target, array $messageChain, int $quote = null)
     {
-        // TODO: Implement sendFriendMessage() method.
+        $body = [
+            'target'=>$target,
+            'messageChain'=>$messageChain,
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('sendFriendMessage',$body,$this->frame->fd));
+
     }
 
     /**
