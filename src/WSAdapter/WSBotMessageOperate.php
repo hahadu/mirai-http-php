@@ -38,7 +38,12 @@ class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessage
      */
     public function sendGroupMessage(?int $target, array $messageChain, int $quote = null)
     {
-        // TODO: Implement sendGroupMessage() method.
+        $body = [
+            'target'=>$target,
+            'messageChain'=>$messageChain,
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('sendGroupMessage',$body,$this->frame->fd));
+
     }
 
     /**
