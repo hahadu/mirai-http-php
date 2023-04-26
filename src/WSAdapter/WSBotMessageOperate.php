@@ -58,7 +58,14 @@ class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessage
      */
     public function sendTempMessage(int $qq, int $group, int $quote, array $messageChain)
     {
-        // TODO: Implement sendTempMessage() method.
+        $body = [
+            'qq'=>$qq,
+            'messageChain'=>$messageChain,
+            'group'=>$group,
+            'quote'=>$quote
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('sendTempMessage',$body,$this->frame->fd));
+
     }
 
     /**
