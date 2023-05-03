@@ -79,7 +79,12 @@ class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessage
      */
     public function sendNudge(int $target, int $subject, string $kind)
     {
-        // TODO: Implement sendNudge() method.
+        $body = [
+            'target'=>$target,
+            'subject'=>$subject,
+            'kind'=>$kind
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('sendNudge',$body,$this->frame->fd));
     }
 
     /**
