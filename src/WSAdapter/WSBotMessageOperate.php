@@ -97,7 +97,11 @@ class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessage
      */
     public function recall(int $message_id, int $target)
     {
-        // TODO: Implement recall() method.
+        $body = [
+            'target'=>$target,
+            'messageId'=>$message_id
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('recall',$body,$this->frame->fd));
     }
 
     /**
