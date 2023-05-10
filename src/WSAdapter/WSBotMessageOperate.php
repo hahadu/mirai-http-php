@@ -113,6 +113,12 @@ class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessage
      */
     public function roamingMessages(string $timeStart, string $timeEnd, string $target)
     {
-        // TODO: Implement roamingMessages() method.
+        $body = [
+            'timeStart'=>$timeStart,
+            'timeEnd'=>$timeEnd,
+            'target'=>$target
+        ];
+
+        $this->server->push($this->frame->fd,$this->sendCommand('roamingMessages',$body,$this->frame->fd));
     }
 }
