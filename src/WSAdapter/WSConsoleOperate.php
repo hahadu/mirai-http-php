@@ -15,10 +15,9 @@ class WSConsoleOperate extends MiraiWebSocketBaseKernel implements BotConsoleOpe
      */
     public function cmdExecute(array $command)
     {
-        $body = [
+        $this->server->push($this->frame->fd,$this->sendCommand('cmdExecute',[
             "command"=> $command,
-        ];
-        $this->server->push($this->frame->fd,$this->sendCommand('cmdExecute',$body,$this->frame->fd));
+        ],$this->frame->fd));
 
     }
 
