@@ -31,6 +31,6 @@ class WSConsoleOperate extends MiraiWebSocketBaseKernel implements BotConsoleOpe
      */
     public function cmdRegister(string $name, array $alias, string $usage, string $description)
     {
-        // TODO: Implement cmdRegister() method.
+        $this->server->push($this->frame->fd,$this->sendCommand('cmdExecute',compact('name','alias','usage','description'),$this->frame->fd));
     }
 }
