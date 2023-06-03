@@ -1,13 +1,13 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
+namespace Hahadu\MiraiHttp\WSAdapter;
 
-use MiraiHttp\Contracts\MiraiInterfaces\BotFileOperateInterface;
-use MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotFileOperateInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
-class WsBotBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOperateInterface
+class WsBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOperateInterface
 {
 
     /**
@@ -53,7 +53,15 @@ class WsBotBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOp
      */
     public function fileInfo(string $id, string $path = null, int $target = null, int $group = null, int $qq = null, bool $with_download_info = false)
     {
-        // TODO: Implement fileInfo() method.
+        $body = [
+            "id"=> $id,
+            "path"=> $path,
+            "target"=> $target,
+            "group"=> $group,
+            "qq"=> $qq,
+            "with_download_info"=> $with_download_info,
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('fileInfo',$body,$this->frame->fd));
     }
 
     /**
@@ -67,7 +75,16 @@ class WsBotBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOp
      */
     public function fileMkdir(string $id, string $path = null, int $target = null, int $group = null, int $qq = null, string $directory_name)
     {
-        // TODO: Implement fileMkdir() method.
+        $body = [
+            "id"=> $id,
+            "path"=> $path,
+            "target"=> $target,
+            "group"=> $group,
+            "qq"=> $qq,
+            "directory_name"=> $directory_name,
+        ];
+
+        $this->server->push($this->frame->fd,$this->sendCommand('fileMkdir',$body,$this->frame->fd));
     }
 
     /**
@@ -80,7 +97,15 @@ class WsBotBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOp
      */
     public function fileDelete(string $id, string $path = null, int $target = null, int $group = null, int $qq = null)
     {
-        // TODO: Implement fileDelete() method.
+        $body = [
+            "id"=> $id,
+            "path"=> $path,
+            "target"=> $target,
+            "group"=> $group,
+            "qq"=> $qq,
+        ];
+
+        $this->server->push($this->frame->fd,$this->sendCommand('fileDelete',$body,$this->frame->fd));
     }
 
     /**

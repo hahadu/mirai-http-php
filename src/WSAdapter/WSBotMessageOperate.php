@@ -1,9 +1,9 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
+namespace Hahadu\MiraiHttp\WSAdapter;
 
-use MiraiHttp\Contracts\MiraiInterfaces\BotMessageOperateInterface;
-use MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotMessageOperateInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
 
 class WSBotMessageOperate extends MiraiWebSocketBaseKernel implements BotMessageOperateInterface
 {

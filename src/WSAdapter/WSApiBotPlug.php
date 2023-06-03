@@ -1,10 +1,10 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
+namespace Hahadu\MiraiHttp\WSAdapter;
 
-use MiraiHttp\Contracts\MiraiInterfaces\BotApiPlugInterface;
-use MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
-use MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotApiPlugInterface;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
 
 class WSApiBotPlug extends MiraiWebSocketBaseKernel implements BotApiPlugInterface
 {

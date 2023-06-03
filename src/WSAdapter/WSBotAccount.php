@@ -1,9 +1,9 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
+namespace Hahadu\MiraiHttp\WSAdapter;
 
-use MiraiHttp\Contracts\MiraiInterfaces\BotAccountInterface;
-use MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotAccountInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
@@ -13,7 +13,6 @@ class WSBotAccount extends MiraiWebSocketBaseKernel
 
     /**
      * 获取bot的好友列表
-     * @return array
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */

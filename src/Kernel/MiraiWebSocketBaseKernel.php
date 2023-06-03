@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiHttp\Kernel;
+namespace Hahadu\MiraiHttp\Kernel;
 use Laravel\Octane\Swoole\SwooleClient;
 use Swoole\WebSocket\Server;
 use Swoole\WebSocket\Frame;

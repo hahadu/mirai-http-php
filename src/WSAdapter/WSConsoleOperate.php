@@ -1,9 +1,9 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
+namespace Hahadu\MiraiHttp\WSAdapter;
 
-use MiraiHttp\Contracts\MiraiInterfaces\BotConsoleOperateInterface;
-use MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotConsoleOperateInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
 
 class WSConsoleOperate extends MiraiWebSocketBaseKernel implements BotConsoleOperateInterface
 {

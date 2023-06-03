@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiHttp\Contracts\MiraiInterfaces;
+namespace Hahadu\MiraiHttp\Contracts\MiraiInterfaces;
 
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;

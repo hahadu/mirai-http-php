@@ -1,9 +1,9 @@
 <?php
 
-namespace MiraiHttp\HttpAdapter\Common;
+namespace Hahadu\MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
-use MiraiHttp\Kernel\MiraiHttpBaseKernel;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 /**
  * 缓存操作

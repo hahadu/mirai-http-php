@@ -1,7 +1,7 @@
 <?php
 
-namespace MiraiHttp\HttpAdapter\Proprietary;
-use MiraiHttp\Kernel\MiraiHttpBaseKernel;
+namespace Hahadu\MiraiHttp\HttpAdapter\Proprietary;
+use Hahadu\MiraiHttp\Kernel\MiraiHttpBaseKernel;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 

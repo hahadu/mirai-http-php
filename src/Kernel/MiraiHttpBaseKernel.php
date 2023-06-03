@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiHttp\Kernel;
+namespace Hahadu\MiraiHttp\Kernel;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as guzzleRequest;
 

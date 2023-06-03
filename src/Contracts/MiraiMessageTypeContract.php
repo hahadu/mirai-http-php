@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiHttp\Contracts;
+namespace Hahadu\MiraiHttp\Contracts;
 
 use Illuminate\Support\Arr;
 

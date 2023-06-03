@@ -1,8 +1,8 @@
 <?php
 
-namespace MiraiHttp\HttpAdapter\Common;
+namespace Hahadu\MiraiHttp\HttpAdapter\Common;
 
-use MiraiHttp\Kernel\MiraiHttpBaseKernel;
+use Hahadu\MiraiHttp\Kernel\MiraiHttpBaseKernel;
 
 class FriendOperate extends MiraiHttpBaseKernel
 {

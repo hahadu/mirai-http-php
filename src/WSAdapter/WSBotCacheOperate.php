@@ -1,8 +1,8 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
-use MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
-use MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
+namespace Hahadu\MiraiHttp\WSAdapter;
+use Hahadu\MiraiHttp\Contracts\MiraiInterfaces\BotMessageCacheInterface;
+use Hahadu\MiraiHttp\Kernel\MiraiWebSocketBaseKernel;
 
 class WSBotCacheOperate extends MiraiWebSocketBaseKernel implements BotMessageCacheInterface
 {

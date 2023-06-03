@@ -1,6 +1,6 @@
 <?php
 
-namespace MiraiHttp\WSAdapter;
+namespace Hahadu\MiraiHttp\WSAdapter;
 
 use Illuminate\Console\Command;
 use Swoole;
