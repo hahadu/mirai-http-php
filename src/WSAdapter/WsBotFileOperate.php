@@ -120,7 +120,16 @@ class WsBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOpera
      */
     public function fileMove(string $id, string $path, int $target = null, int $group = null, int $qq = null, string $move_to = null, string $move_to_path = null)
     {
-        // TODO: Implement fileMove() method.
+        $body = [
+            "id"=> $id,
+            "path"=> $path,
+            "target"=> $target,
+            "group"=> $group,
+            "qq"=> $qq,
+            "moveTo"=> $move_to,
+            "moveToPath"=> $move_to_path,
+        ];
+        $this->server->push($this->frame->fd,$this->sendCommand('fileMove',$body,$this->frame->fd));
     }
 
     /**
@@ -134,6 +143,15 @@ class WsBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOpera
      */
     public function fileRename(string $id, string $path, int $target = null, int $group = null, int $qq = null, int $rename_to = null)
     {
-        // TODO: Implement fileRename() method.
+        $body = [
+            "id"=> $id,
+            "path"=> $path,
+            "target"=> $target,
+            "group"=> $group,
+            "qq"=> $qq,
+            "renameTo"=> $rename_to,
+        ];
+
+        $this->server->push($this->frame->fd,$this->sendCommand('fileMove',$body,$this->frame->fd));
     }
 }
