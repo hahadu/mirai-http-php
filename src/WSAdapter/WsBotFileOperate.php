@@ -152,6 +152,6 @@ class WsBotFileOperate extends MiraiWebSocketBaseKernel  implements BotFileOpera
             "renameTo"=> $rename_to,
         ];
 
-        $this->server->push($this->frame->fd,$this->sendCommand('fileMove',$body,$this->frame->fd));
+        $this->server->push($this->frame->fd,$this->sendCommand('fileRename',$body,$this->frame->fd));
     }
 }
